@@ -13,6 +13,7 @@ public class SeleniumTest {
         // create an instance pf webdriver
         WebDriver driver = new ChromeDriver();
 
+
         // maximize the window
         driver.manage().window().maximize();
         //driver.manage().window().fullscreen();
