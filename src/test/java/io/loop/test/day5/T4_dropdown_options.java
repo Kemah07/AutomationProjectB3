@@ -39,7 +39,7 @@ public class T4_dropdown_options {
         driver.close();
     }
 
-    @Test
+    @Test (priority = 1)
     public void colorTests() {
         Select dropdown = new Select(driver.findElement(By.xpath("//select[@id='oldSelectMenu']")));
         dropdown.selectByIndex(3);
