@@ -13,7 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import static org.testng.Assert.*;
 import java.time.Duration;
 
 public class T3_simple_dropdown {
@@ -43,10 +43,13 @@ public class T3_simple_dropdown {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // create a dropdown
-        // WebElement dropDownElement = driver.findElement(By.xpath("//select[@id='dropdown']"));
+      // WebElement dropDownElement = driver.findElement(By.xpath("//select[@id='dropdown']"));
+
         Select dropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
         actual = dropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals(actual, expected, "Actual does not match expected");
+        assertEquals(actual, expected, "Actual does not match expected");
+
+
 
     }
 }
