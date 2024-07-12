@@ -46,7 +46,7 @@ public class DocuportUtils {
 
         loginButton.click();
 
-        if(role.toLowerCase().equals("client")){
+        if(role.equalsIgnoreCase("client")){
             Thread.sleep(3000);
             WebElement cont = driver.findElement(By.xpath("//button[@type='submit']"));
             cont.click();
