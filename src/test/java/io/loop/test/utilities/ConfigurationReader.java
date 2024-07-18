@@ -9,16 +9,17 @@ public class ConfigurationReader {
     static{
         try {
             String path = "configuration.properties";
-            FileInputStream input = new FileInputStream(path);
-            properties = new Properties();
-            properties.load(input);
+            FileInputStream input = new FileInputStream(path); //opening the file in the Java memory
+
+            properties = new Properties(); // Creating Properties class object
+            properties.load(input); //loading the "properties" object with the fileStream
             input.close();
         } catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public static String getProperties(String keyName){
+    public static String getProperties(String keyName){ // Use properties object and getProperty method to pass "key" and read "value"
         return properties.getProperty(keyName);
     }
 }
